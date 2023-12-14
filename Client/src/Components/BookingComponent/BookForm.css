@@ -1,0 +1,112 @@
+.form_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: green; */
+  padding-top: 20px;
+}
+.title {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  /* color: white; */
+  font-size: 20px;
+}
+.title span {
+  margin-bottom: -5px;
+  margin-right: 5px;
+}
+.booking_form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 20px;
+  margin: 0 auto 20px;
+  align-items: center;
+  justify-content: center;
+}
+.booking_form select {
+  padding: 10px;
+  outline: none;
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type="number"] {
+  padding: 10px;
+  outline: none;
+  width: 100%;
+  max-width: 300px;
+}
+.button {
+  outline: none;
+  width: 40%;
+  margin: 0 auto;
+  max-width: 100px;
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: green;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+}
+@media screen and (min-width: 990px) {
+  .form_container {
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding-top: 20px;
+    width: 90%;
+    margin: -70px auto 0;
+    z-index: 999;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px 10px 0px 0;
+  }
+  .booking_form {
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    margin: 0 auto 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .title {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    margin-top: -10px;
+    color: green;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .button {
+    outline: none;
+    width: 40%;
+    margin: 0 auto;
+    max-width: 100px;
+    border: none;
+    border-radius: unset;
+    padding: 10px;
+    border: 2px solid green;
+  }
+  input {
+    border: 2px solid green;
+    color: green;
+  }
+  .booking_form select {
+    border: 2px solid green;
+    color: green;
+  }
+}
