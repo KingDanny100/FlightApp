@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import HomePage from "./HomePage";
 import Services from "./Components/ServicesComponent/Services";
 import About from "./Components/AboutComponent/About";
@@ -10,14 +16,38 @@ import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp
 import Payment from "./Components/BookingComponent/Payment/Payment";
 import Confirmation from "./Components/Confirmation/Confirmation";
 
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <HomePage handleShowReciept={handleShowReciept} />,
+    },
+    {
+      path:"/services", 
+      element: <Services />,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/expore",
+      element: <Places/>,
+    },
+  ],
+  {
+    basename: import.meta.env.BASE_URL,
+  }
+);
+
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   // const [showReceipt, setShowReciept] = useState(false)
-  const [fullDetails, setFullDetails] = useState('')
+  const [fullDetails, setFullDetails] = useState("");
 
-  const handleShowReciept = (details) =>  {
-    setFullDetails(details)
-  }
+  const handleShowReciept = (details) => {
+    setFullDetails(details);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,14 +74,21 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage handleShowReciept={handleShowReciept} />} />
+      <RouterProvider router={router}/>
+      {/* <Routes>
+        <Route
+          path="/"
+          element={<HomePage handleShowReciept={handleShowReciept} />}
+        />
         <Route path="/services" Component={Services} />
         <Route path="/about" Component={About} />
         <Route path="/explore" Component={Places} />
         <Route path="/user" Component={Payment} />
-        <Route path="/receipt" element={<Confirmation details={fullDetails} />} />
-      </Routes>
+        <Route
+          path="/receipt"
+          element={<Confirmation details={fullDetails} />}
+        />
+      </Routes> */}
       <div
         className={`scroll_arrow ${isVisible ? "visible" : ""}`}
         onClick={scrollToTop}
