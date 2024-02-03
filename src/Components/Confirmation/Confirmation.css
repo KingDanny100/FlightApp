@@ -1,0 +1,127 @@
+.confirm_container{
+    /* position: fixed; */
+    background-color: whitesmoke;
+    /* top: 0;
+    left: 0; */
+    position: relative;
+    /* height: 100vh; */
+    width: 100%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.error_div{
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: black;
+}
+.qr_container{
+    z-index: 4;
+}
+.paid_image{
+    width: 50%;
+    /* z-index: ; */
+    position: absolute;
+    right: 15px;
+    /* top: 10px; */
+    bottom: 50%;
+    max-width: 200px;
+}
+
+.letter{
+    color: white;
+}
+.reciept_info{
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    flex-direction: column;
+}
+.reciept_details p{
+    margin-bottom: 20px;
+    z-index: 999;
+    font-weight: bold;
+    /* background-color: blue; */
+    /* font-size: 20px; */
+}
+p span{
+    color: green;
+}
+
+.receipt_message{
+    color: rgb(0, 66, 0);
+    font-size: 25px;
+    z-index: 3;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.receipt_buttons{
+    /* background-color: red; */
+    display: flex;
+    gap: 20px;
+}
+.receipt_buttons button{
+    padding: 10px;
+    width: 120px;
+    z-index: 99;
+    margin-bottom: 20px;
+}
+.receipt_buttons button:hover{
+    background-color: green;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+    .paid_image{
+        width: 50%;
+        z-index: 1;
+        position: absolute;
+        right: 15px;
+        /* top: 10px; */
+        bottom: 40px;
+        max-width: 250px;
+    }
+    .reciept_info{
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 700px){
+    .paid_image{
+        width: 50%;
+        z-index: 1;
+        position: absolute;
+        right: 25%;
+        /* top: 10px; */
+        bottom: 60px;
+        /* max-width: 400px; */
+    }
+    
+}
+@media screen and (min-width: 990px){
+    .paid_image{
+        width: 50%;
+        z-index: 1;
+        position: absolute;
+        right: 25%;
+        /* top: 10px; */
+        bottom: 60px;
+        /* max-width: 400px; */
+    }
+    .confirm_container{
+        padding-top: 50px;
+    }
+}

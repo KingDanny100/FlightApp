@@ -1,0 +1,48 @@
+.payment_container{
+    background-color: rgb(10, 10, 10,0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: unset;
+    z-index: 98;
+}
+.details{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.payment_form{
+    background-color: white;
+    width: 90%;
+    padding: 20px 15px;
+    max-width: 600px;
+}
+.input_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input_div input{
+    margin-bottom: 25px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    /* border-left: 1px solid black; */
+    width: 100%;
+    padding: 10px;
+    max-width: 400px;
+}
+.payment_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 300px;
+}
+.confirmation{
+    margin-top: 20px;
+}
