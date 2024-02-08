@@ -9,7 +9,6 @@ import Background from "./Components/BackgroundComponent/Background";
 const HomePage = ({handleShowReciept}) => {
   return (
     <>
-      
       <Header />
       <BookForm handleShowReciept={handleShowReciept}/>
       <About />

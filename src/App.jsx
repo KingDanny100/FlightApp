@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
 import Services from "./Components/ServicesComponent/Services";
 import About from "./Components/AboutComponent/About";
@@ -15,30 +9,6 @@ import Footer from "./Components/FooterComponent/Footer";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 import Payment from "./Components/BookingComponent/Payment/Payment";
 import Confirmation from "./Components/Confirmation/Confirmation";
-
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <HomePage handleShowReciept={handleShowReciept} />,
-    },
-    {
-      path:"/services", 
-      element: <Services />,
-    },
-    {
-      path: "/about",
-      element: <About />,
-    },
-    {
-      path: "/expore",
-      element: <Places/>,
-    },
-  ],
-  {
-    basename: import.meta.env.BASE_URL,
-  }
-);
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -72,10 +42,10 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <Router basename="/FlightApp/">
       <Navbar />
-      <RouterProvider router={router}/>
-      {/* <Routes>
+
+      <Routes>
         <Route
           path="/"
           element={<HomePage handleShowReciept={handleShowReciept} />}
@@ -88,7 +58,7 @@ function App() {
           path="/receipt"
           element={<Confirmation details={fullDetails} />}
         />
-      </Routes> */}
+      </Routes>
       <div
         className={`scroll_arrow ${isVisible ? "visible" : ""}`}
         onClick={scrollToTop}
@@ -96,7 +66,7 @@ function App() {
         <KeyboardDoubleArrowUpIcon sx={{ fontSize: 50 }} />
       </div>
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 }
 
